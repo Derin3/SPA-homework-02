@@ -133,14 +133,14 @@ void game_of_life::next_generation()
                     _next_generation[i][j] = false;
                 }
             }
-            _generation[i][j] = _next_generation[i][j];
+            //_generation[i][j] = _next_generation[i][j]; cell_taken issue
         }
     }
-    //for (int i = 0; i < ROWS; ++i) {
-    //    for (int j = 0; j < COLS; ++j) {
-    //      _generation[i][j] = _next_generation[i][j];
-    //    }
-    //}
+    for (int i = 0; i < ROWS; ++i) {
+        for (int j = 0; j < COLS; ++j) {
+          _generation[i][j] = _next_generation[i][j];
+        }
+    }
 }
 
 void game_of_life::draw() {
